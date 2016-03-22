@@ -17,6 +17,13 @@ resource "google_compute_instance" "orchestration" {
         }
     }
 
+    provisioner "remote-exec" {
+        inline = [
+        "sudo apt-get update",
+        "sudo apt-get install wget"
+        ]
+    }
+
     service_account {
         scopes = ["userinfo-email", "compute-ro", "storage-ro"]
     }
