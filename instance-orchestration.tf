@@ -7,7 +7,7 @@ resource "google_compute_instance" "orchestration" {
     
     disk {
         image = "ubuntu-1404-trusty-v20160311"
-        disk = "80"
+        size = "80"
     }
 
     network_interface {
